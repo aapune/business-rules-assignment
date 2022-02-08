@@ -1,5 +1,11 @@
 package com.ani.drools.decision.demo.model;
 
+/**
+ * 
+ * @author Ani
+ * This is input model for API
+ *
+ */
 public class OrderRequest {   
     private PaymentType paymentType;
     private String attrName;
