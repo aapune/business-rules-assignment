@@ -32,6 +32,7 @@ public class SpringBootDroolsAppTests {
 	@SuppressWarnings("unchecked")
 	@Test
 	public void testPhysicalProduct() {
+		String expectedRespOutput = "generate a packing slip for shipping ,generate a commission payment to the agent";
 		RestAssured.baseURI = baseUri;
 		RequestSpecification request = RestAssured.given();
 		JSONObject requestParams = new JSONObject();
@@ -43,12 +44,14 @@ public class SpringBootDroolsAppTests {
 		System.out.println(response.getStatusLine());
 		System.out.println(body.asString());
 		assertThat(response.getStatusCode()).isEqualTo(200);
+		assertThat(body.asString()).contains(expectedRespOutput);
 	}
 
 
 	@SuppressWarnings("unchecked")
 	@Test
 	public void testBookInput() {
+		String expectedRespOutput = "create a duplicate packing slip for the royalty department";
 		RestAssured.baseURI = baseUri;
 		RequestSpecification request = RestAssured.given();
 		JSONObject requestParams = new JSONObject();
@@ -60,12 +63,14 @@ public class SpringBootDroolsAppTests {
 		System.out.println(response.getStatusLine());
 		System.out.println(body.asString());
 		assertThat(response.getStatusCode()).isEqualTo(200);
+		assertThat(body.asString()).contains(expectedRespOutput);
 	}
 	
 	
 	@SuppressWarnings("unchecked")
 	@Test
 	public void testMembershipInput() {
+		String expectedRespOutput = "activate that membership";
 		RestAssured.baseURI = baseUri;
 		RequestSpecification request = RestAssured.given();
 		JSONObject requestParams = new JSONObject();
@@ -77,12 +82,14 @@ public class SpringBootDroolsAppTests {
 		System.out.println(response.getStatusLine());
 		System.out.println(body.asString());
 		assertThat(response.getStatusCode()).isEqualTo(200);
+		assertThat(body.asString()).contains(expectedRespOutput);
 	}
 	
 	
 	@SuppressWarnings("unchecked")
 	@Test
 	public void testUpgradeMembershipInput() {
+		String expectedRespOutput = "apply the upgrade";
 		RestAssured.baseURI = baseUri;
 		RequestSpecification request = RestAssured.given();
 		JSONObject requestParams = new JSONObject();
@@ -94,12 +101,14 @@ public class SpringBootDroolsAppTests {
 		System.out.println(response.getStatusLine());
 		System.out.println(body.asString());
 		assertThat(response.getStatusCode()).isEqualTo(200);
+		assertThat(body.asString()).contains(expectedRespOutput);
 	}
 	
 	
 	@SuppressWarnings("unchecked")
 	@Test
 	public void testVideoInput() {
+		String expectedRespOutput = "";
 		RestAssured.baseURI = baseUri;
 		RequestSpecification request = RestAssured.given();
 		JSONObject requestParams = new JSONObject();
@@ -111,12 +120,14 @@ public class SpringBootDroolsAppTests {
 		System.out.println(response.getStatusLine());
 		System.out.println(body.asString());
 		assertThat(response.getStatusCode()).isEqualTo(200);
+		assertThat(body.asString()).contains(expectedRespOutput);
 	}
 	
 	
 	@SuppressWarnings("unchecked")
 	@Test
 	public void testVideoInputWithVideoName() {
+		String expectedRespOutput = "add a free “First Aid” video to the packing slip";
 		RestAssured.baseURI = baseUri;
 		RequestSpecification request = RestAssured.given();
 		JSONObject requestParams = new JSONObject();
@@ -129,6 +140,7 @@ public class SpringBootDroolsAppTests {
 		System.out.println(response.getStatusLine());
 		System.out.println(body.asString());
 		assertThat(response.getStatusCode()).isEqualTo(200);
+		assertThat(body.asString()).contains(expectedRespOutput);
 	}
 
 	
