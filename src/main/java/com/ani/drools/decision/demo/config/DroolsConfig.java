@@ -8,7 +8,13 @@ import org.kie.api.runtime.KieContainer;
 import org.kie.internal.io.ResourceFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
- 
+
+/**
+ * 
+ * @author Ani
+ * Drools configuration
+ *
+ */
 @Configuration
 public class DroolsConfig {
  
