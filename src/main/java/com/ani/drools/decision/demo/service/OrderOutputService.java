@@ -8,7 +8,12 @@ import org.springframework.stereotype.Service;
 import com.ani.drools.decision.demo.model.OrderOutput;
 import com.ani.drools.decision.demo.model.OrderRequest;
  
-
+/**
+ * 
+ * @author Ani
+ * This is business service which maps to drools business rule engine
+ *
+ */
  
 @Service
 public class OrderOutputService {
