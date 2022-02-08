@@ -25,6 +25,22 @@ import io.restassured.specification.RequestSpecification;
 public class SpringBootDroolsAppTests {
 	
 	
+	@SuppressWarnings("unchecked")
+	@Test
+	public void testPhysicalProduct() {
+		RestAssured.baseURI = "http://localhost:9999";
+		RequestSpecification request = RestAssured.given();
+		JSONObject requestParams = new JSONObject();
+		request.contentType(ContentType.JSON);
+		requestParams.put("paymentType", "PHYPRD");
+		request.body(requestParams.toJSONString());
+		Response response = request.post("/get-output");
+		ResponseBody<?> body = response.getBody();
+		System.out.println(response.getStatusLine());
+		System.out.println(body.asString());
+		assertThat(response.getStatusCode()).isEqualTo(200);
+	}
+
 
 	@SuppressWarnings("unchecked")
 	@Test
