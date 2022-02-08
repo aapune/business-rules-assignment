@@ -24,17 +24,21 @@ import io.restassured.specification.RequestSpecification;
  */
 public class SpringBootDroolsAppTests {
 	
+	private final String baseUri =  "http://localhost:9999";
+	private final String postMethod =  "/get-output";
+	
+	
 	
 	@SuppressWarnings("unchecked")
 	@Test
 	public void testPhysicalProduct() {
-		RestAssured.baseURI = "http://localhost:9999";
+		RestAssured.baseURI = baseUri;
 		RequestSpecification request = RestAssured.given();
 		JSONObject requestParams = new JSONObject();
 		request.contentType(ContentType.JSON);
 		requestParams.put("paymentType", "PHYPRD");
 		request.body(requestParams.toJSONString());
-		Response response = request.post("/get-output");
+		Response response = request.post(postMethod);
 		ResponseBody<?> body = response.getBody();
 		System.out.println(response.getStatusLine());
 		System.out.println(body.asString());
@@ -45,13 +49,13 @@ public class SpringBootDroolsAppTests {
 	@SuppressWarnings("unchecked")
 	@Test
 	public void testBookInput() {
-		RestAssured.baseURI = "http://localhost:9999";
+		RestAssured.baseURI = baseUri;
 		RequestSpecification request = RestAssured.given();
 		JSONObject requestParams = new JSONObject();
 		request.contentType(ContentType.JSON);
 		requestParams.put("paymentType", "BOOK");
 		request.body(requestParams.toJSONString());
-		Response response = request.post("/get-output");
+		Response response = request.post(postMethod);
 		ResponseBody<?> body = response.getBody();
 		System.out.println(response.getStatusLine());
 		System.out.println(body.asString());
@@ -62,13 +66,13 @@ public class SpringBootDroolsAppTests {
 	@SuppressWarnings("unchecked")
 	@Test
 	public void testMembershipInput() {
-		RestAssured.baseURI = "http://localhost:9999";
+		RestAssured.baseURI = baseUri;
 		RequestSpecification request = RestAssured.given();
 		JSONObject requestParams = new JSONObject();
 		request.contentType(ContentType.JSON);
 		requestParams.put("paymentType", "MEMBERSHIP");
 		request.body(requestParams.toJSONString());
-		Response response = request.post("/get-output");
+		Response response = request.post(postMethod);
 		ResponseBody<?> body = response.getBody();
 		System.out.println(response.getStatusLine());
 		System.out.println(body.asString());
@@ -79,13 +83,13 @@ public class SpringBootDroolsAppTests {
 	@SuppressWarnings("unchecked")
 	@Test
 	public void testUpgradeMembershipInput() {
-		RestAssured.baseURI = "http://localhost:9999";
+		RestAssured.baseURI = baseUri;
 		RequestSpecification request = RestAssured.given();
 		JSONObject requestParams = new JSONObject();
 		request.contentType(ContentType.JSON);
 		requestParams.put("paymentType", "UPG_MEMBERSHIP");
 		request.body(requestParams.toJSONString());
-		Response response = request.post("/get-output");
+		Response response = request.post(postMethod);
 		ResponseBody<?> body = response.getBody();
 		System.out.println(response.getStatusLine());
 		System.out.println(body.asString());
@@ -96,13 +100,13 @@ public class SpringBootDroolsAppTests {
 	@SuppressWarnings("unchecked")
 	@Test
 	public void testVideoInput() {
-		RestAssured.baseURI = "http://localhost:9999";
+		RestAssured.baseURI = baseUri;
 		RequestSpecification request = RestAssured.given();
 		JSONObject requestParams = new JSONObject();
 		request.contentType(ContentType.JSON);
 		requestParams.put("paymentType", "VIDEO");
 		request.body(requestParams.toJSONString());
-		Response response = request.post("/get-output");
+		Response response = request.post(postMethod);
 		ResponseBody<?> body = response.getBody();
 		System.out.println(response.getStatusLine());
 		System.out.println(body.asString());
@@ -113,14 +117,14 @@ public class SpringBootDroolsAppTests {
 	@SuppressWarnings("unchecked")
 	@Test
 	public void testVideoInputWithVideoName() {
-		RestAssured.baseURI = "http://localhost:9999";
+		RestAssured.baseURI = baseUri;
 		RequestSpecification request = RestAssured.given();
 		JSONObject requestParams = new JSONObject();
 		request.contentType(ContentType.JSON);
 		requestParams.put("paymentType", "VIDEO");
-		requestParams.put("paymentType", "LEARNING_TO_SKI");
+		requestParams.put("attrName", "LEARNING_TO_SKI");
 		request.body(requestParams.toJSONString());
-		Response response = request.post("/get-output");
+		Response response = request.post(postMethod);
 		ResponseBody<?> body = response.getBody();
 		System.out.println(response.getStatusLine());
 		System.out.println(body.asString());
