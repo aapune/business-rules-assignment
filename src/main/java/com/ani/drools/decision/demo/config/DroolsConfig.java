@@ -12,6 +12,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class DroolsConfig {
  
+	/*
+	 * Drools decision file location
+	 */
     private static final String RULES_ORDER_DISCOUNT_XLS = "rules/order-rules.xlsx";
     private static final KieServices kieServices = KieServices.Factory.get();
  
