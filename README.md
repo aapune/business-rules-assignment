@@ -77,4 +77,4 @@ payment type is UPGRADE MEMBERSHIP
 
 ### Changing rules:
 
-If you want to change rules please change & review in drools decision excel sheet -> <CLONED_DIRECTORY>\src\main\resources\rules\order-rules.xlsx
+If you want to change rules please change & review in drools decision excel sheet :  <CLONED_DIRECTORY>\src\main\resources\rules\order-rules.xlsx
