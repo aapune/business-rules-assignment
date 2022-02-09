@@ -23,7 +23,7 @@ Drools decision table (excel based business rules) allows less maintenance & hig
 
 
 ## Development approach :
-TDD first : Written all possible test cases using Restassured library assuming every requirement as api call
+TDD first : Written all possible test cases using Restassured library assuming every requirement as api call.
 Unit tests are failed & started implementing code in a TDD style.
 
 Below are the payment types used:
